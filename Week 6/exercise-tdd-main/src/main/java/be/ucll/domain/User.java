@@ -10,14 +10,13 @@ public class User {
     private int age;
     private List<Integer> membershipYears = new ArrayList<Integer>();
 
-    public User(String name, int age, String email) {
+    public User(String name, int age) {
         setAge(age);
         setName(name);
     }
 
     public User() {
     }
-
 
     public int getAge() {
         return this.age;
@@ -86,7 +85,4 @@ public class User {
         return Objects.equals(this.name, other.name);
     }
 
-    public String getEmail() {
-        return "";
-    }
 }

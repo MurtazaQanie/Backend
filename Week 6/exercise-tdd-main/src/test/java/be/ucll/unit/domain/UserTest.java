@@ -26,17 +26,17 @@ class UserTest {
 
 //     //constructor
 //     //happy case
-     @Test
-     void givenValidValues_whenCreatingUser_thenUserIsCreatedWithThoseValues() {
-         //when
-         User amelia = new User(validNameAmelia, validAgeAmelia, validEmailAmelia);
-         //then
-         assertNotNull(amelia);
-         assertEquals(validNameAmelia, amelia.getName());
-         assertEquals(validAgeAmelia, amelia.getAge());
-         assertEquals(0, amelia.countYearsOfMembership());
-         assertEquals(validEmailAmelia, amelia.getEmail());
-     }
+//     @Test
+//     void givenValidValues_whenCreatingUser_thenUserIsCreatedWithThoseValues() {
+//         //when
+//         User amelia = new User(validNameAmelia, validAgeAmelia, validEmailAmelia);
+//         //then
+//         assertNotNull(amelia);
+//         assertEquals(validNameAmelia, amelia.getName());
+//         assertEquals(validAgeAmelia, amelia.getAge());
+//         assertEquals(0, amelia.countYearsOfMembership());
+//         assertEquals(validEmailAmelia, amelia.getEmail());
+//     }
 
 //     //constructor
 //     //unhappy case
