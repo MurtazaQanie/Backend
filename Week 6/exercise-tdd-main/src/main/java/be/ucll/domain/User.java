@@ -8,6 +8,8 @@ public class User {
 
     private String name;
     private int age;
+    private String email;
+    private String password;
     private List<Integer> membershipYears = new ArrayList<Integer>();
 
     public User(String name, int age) {
@@ -15,15 +17,57 @@ public class User {
         setName(name);
     }
 
-    public User() {
+    public User(String name, int age, String email) {
+        setName(name);
+        setAge(age);
+        setEmail(email);
+
+    }
+    public String getPassword(){
+        return this.password;
+    }
+    public void setPassword(String password){
+
+        if (getAge() < 18){
+            throw new RuntimeException("Only adults can have a password");}
+
+        if (password.length() < 3 || password.isEmpty() || password.isBlank()|| password==null){
+            throw new RuntimeException("Password must have at least 3 characters");}
+        this.password = password;
+
     }
 
+
+    public boolean isPasswordCorrect(String password){
+        if (password.equals(this.password)){
+            return true;
+        }
+        return false;
+    }
+
+
+
+
+
+
+    public String getEmail(){return  this.email;}
+    public void setEmail(String email){
+        if (email.contains("@") && email.contains(".")){
+            this.email=email;
+        }
+        else {
+            throw new RuntimeException("Email must contain dot and @.");
+        }
+        }
     public int getAge() {
         return this.age;
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age > 0 && age < 150){this.age = age;}
+        else {
+            throw new RuntimeException("Age must be positive and not more than 150");
+        }
     }
 
     public String getName() {
@@ -85,4 +129,16 @@ public class User {
         return Objects.equals(this.name, other.name);
     }
 
+    @Override
+    public String toString() {
+        return "User " + getName()+"(" + getEmail()+") is " + getAge() +" years old.";
+}
+
+    protected boolean isAdult() {
+        if (getAge() > 18){
+            return true;
+        }
+        return false;
+
+    }
 }
