@@ -2,6 +2,7 @@ package be.ucll.controller;
 
 import java.util.List;
 
+import be.ucll.repository.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,4 +26,14 @@ public class UserRestController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
+
+
+    @GetMapping("/search")
+    public User getUserWithEmail(@RequestParam(value = "email", required = false)String email){
+        return userService.getUserWithEmail(email);
+    }
+
 }
+
+

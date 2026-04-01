@@ -20,4 +20,8 @@ public class UserService {
         return userRepository.getAllUsers();
     }
 
+    public User getUserWithEmail(String email){
+        return  userRepository.getUserWithEmail(email);
+    }
+
 }

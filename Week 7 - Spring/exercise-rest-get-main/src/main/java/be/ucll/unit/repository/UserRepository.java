@@ -32,4 +32,20 @@ public class UserRepository {
         return userRepository.add(user);
     }
 
+
+    public User getUserWithEmail(String email){
+        for (User user: userRepository){
+
+        if (user.getEmail().equals(email)){
+            return user;
+        }
+        }
+        return null;
+
+    }
+
+
+
+
+
 }
