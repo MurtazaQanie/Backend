@@ -1,4 +1,4 @@
-package be.ucll.model;
+package be.ucll.unit.model;
 
 public class User {
 

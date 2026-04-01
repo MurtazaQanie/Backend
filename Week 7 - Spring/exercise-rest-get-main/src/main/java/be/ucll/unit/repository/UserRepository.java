@@ -1,11 +1,11 @@
-package be.ucll.repository;
+package be.ucll.unit.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import be.ucll.model.User;
+import be.ucll.unit.model.User;
 
 @Repository
 public class UserRepository {
@@ -42,6 +42,17 @@ public class UserRepository {
         }
         return null;
 
+    }
+
+
+    public List<User> getNameContaining(String name){
+        List<User> users = new ArrayList<>();
+        for (User user:userRepository){
+            if (user.getName().contains(name)){
+                users.add(user);
+            }
+        }
+        return users;
     }
 
 

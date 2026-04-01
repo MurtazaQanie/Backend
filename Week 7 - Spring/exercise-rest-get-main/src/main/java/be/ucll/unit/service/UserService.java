@@ -1,11 +1,11 @@
-package be.ucll.service;
+package be.ucll.unit.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import be.ucll.model.User;
-import be.ucll.repository.UserRepository;
+import be.ucll.unit.model.User;
+import be.ucll.unit.repository.UserRepository;
 
 @Service
 public class UserService {
@@ -24,4 +24,5 @@ public class UserService {
         return  userRepository.getUserWithEmail(email);
     }
 
+    public List<User> getNameContaining(String name){return userRepository.getNameContaining(name);}
 }
